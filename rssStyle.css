@@ -1,0 +1,41 @@
+#mainArticle {
+  margin: 5%;
+  height: 70%;
+  width: 60%;
+  float: left;
+  display: inline-block;
+  border: 2px solid black;
+  overflow: scroll;
+}
+
+#feedDivs {
+  margin: 10px;
+  float: right;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+
+#firstFeed {
+  margin: 5px;
+  border: 2px solid black;
+}
+
+#secondFeed {
+  margin: 5px;
+  border: 2px solid black;
+}
+
+#thirdFeed {
+  margin: 5px;
+  border: 2px solid black;
+}
+
+#button button {
+  margin: auto;
+}
+
+#button {
+  width: 50%;
+  display: flex;
+}
