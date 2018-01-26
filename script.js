@@ -1,7 +1,7 @@
 var currentID, currentFeed, newLink;
 
-//click handlers for feeds to load into DOM
-$('#firstFeed li').on('click', function(e) {
+// click handlers for feeds to load into DOM
+$('#feedDivs li').on('click', function(e) {
   e.preventDefault();
   let link = $(this).find('a').attr("href");
   $("#mainArticle").load(link);
@@ -9,23 +9,7 @@ $('#firstFeed li').on('click', function(e) {
   currentFeed = $(this).closest('div').attr("id");
 });
 
-$('#secondFeed li').on('click', function(e) {
-  e.preventDefault();
-  let link = $(this).find('a').attr("href");
-  $("#mainArticle").load(link);
-  currentID = parseInt($(this).attr('id'));
-  currentFeed = $(this).closest('div').attr("id");
-});
-
-$('#thirdFeed li').on('click', function(e) {
-  e.preventDefault();
-  let link = $(this).find('a').attr("href");
-  $("#mainArticle").load(link);
-  currentID = parseInt($(this).attr('id'));
-  currentFeed = $(this).closest('div').attr("id");
-});
-
-//view next article if current article viewed has a next article
+// view next article if current article viewed has a next article
 $('#nextArticle').on('click', function(e) {
   e.preventDefault();
   if(currentID != null) {
@@ -38,7 +22,7 @@ $('#nextArticle').on('click', function(e) {
   }
 });
 
-//view previous article if current article has a previous article
+// view previous article if current article has a previous article
 $('#previousArticle').on('click', function(e) {
   e.preventDefault();
   if(currentID > 1) {
@@ -51,7 +35,7 @@ $('#previousArticle').on('click', function(e) {
   }
 });
 
-//view entire feed in new window
+// view entire feed in new window
 $('#fullFeed').on('click', function(e) {
   newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
   window.open(newLink);

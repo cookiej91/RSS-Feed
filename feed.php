@@ -8,7 +8,6 @@ function getNews($feed_url, $uniqueId) {
   echo "<ul>";
   foreach($x->channel->item as $entry) if($tmp++ < 5){
     echo "<li id='$tmp'><a href='$entry->link' title='$entry->title'>" . $entry->title . "</a></li>";
-
   }
   echo "</ul>";
 }

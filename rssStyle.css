@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+#feedDivs ul {
+  text-align: left;
+}
+
 #firstFeed {
   margin: 5px;
   border: 2px solid black;
