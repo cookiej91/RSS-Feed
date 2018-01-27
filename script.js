@@ -1,13 +1,35 @@
 var currentID, currentFeed, newLink;
+var temp = 0;
+
+$(document).ready(function () {
+  loadFeed('http://feeds.feedburner.com/TechCrunch/startups', '#firstFeed');
+  loadFeed('http://api.flickr.com/services/feeds/photos_public.gne?tags=computers&format=rss_200', '#secondFeed');
+  loadFeed('http://feeds.bbci.co.uk/news/technology/rss.xml?edition=uk', '#thirdFeed');
+
+});
+
+function loadFeed(feed, elem) {
+  $.ajax({
+    url: "feed.php",
+    data: {url: feed},
+    method: "GET",
+    success: (data)=>{
+       $(elem).append(data);
+       eventHandler(elem);
+    }
+  });
+}
 
 // click handlers for feeds to load into DOM
-$('#feedDivs li').on('click', function(e) {
-  e.preventDefault();
-  let link = $(this).find('a').attr("href");
-  $("#mainArticle").attr('src', link);
-  currentID = parseInt($(this).attr('id'));
-  currentFeed = $(this).closest('div').attr("id");
-});
+function eventHandler(elem) {
+  $(`${elem} li`).on('click', function(e) {
+    e.preventDefault();
+    let link = $(this).find('a').attr("href");
+    $("#mainArticle").attr('src', link);
+    currentID = parseInt($(this).attr('id'));
+    currentFeed = $(this).closest('div').attr("id");
+  });
+}
 
 // view next article if current article viewed has a next article
 $('#nextArticle').on('click', function(e) {
