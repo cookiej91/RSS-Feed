@@ -16,7 +16,6 @@ $('#nextArticle').on('click', function(e) {
     currentID = currentID += 1;
     newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
     $("#mainArticle").load(newLink);
-    console.log(newLink);
   } else {
     alert("Please select your first article");
   }
@@ -29,7 +28,6 @@ $('#previousArticle').on('click', function(e) {
     currentID = currentID -= 1;
     newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
     $("#mainArticle").load(newLink);
-    console.log(newLink);
   } else {
     alert("No previous article found");
   }
