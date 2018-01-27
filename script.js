@@ -5,7 +5,6 @@ $(document).ready(function () {
   loadFeed('http://feeds.feedburner.com/TechCrunch/startups', '#firstFeed');
   loadFeed('http://api.flickr.com/services/feeds/photos_public.gne?tags=computers&format=rss_200', '#secondFeed');
   loadFeed('http://feeds.bbci.co.uk/news/technology/rss.xml?edition=uk', '#thirdFeed');
-
 });
 
 function loadFeed(feed, elem) {
