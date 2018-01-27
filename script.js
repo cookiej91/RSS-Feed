@@ -13,7 +13,7 @@ $('#feedDivs li').on('click', function(e) {
 $('#nextArticle').on('click', function(e) {
   e.preventDefault();
   if(currentID != null) {
-    currentID = currentID += 1;
+    currentID += 1;
     newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
     $("#mainArticle").load(newLink);
   } else {
@@ -25,7 +25,7 @@ $('#nextArticle').on('click', function(e) {
 $('#previousArticle').on('click', function(e) {
   e.preventDefault();
   if(currentID > 1) {
-    currentID = currentID -= 1;
+    currentID -= 1;
     newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
     $("#mainArticle").load(newLink);
   } else {
