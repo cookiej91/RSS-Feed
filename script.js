@@ -4,7 +4,7 @@ var currentID, currentFeed, newLink;
 $('#feedDivs li').on('click', function(e) {
   e.preventDefault();
   let link = $(this).find('a').attr("href");
-  $("#mainArticle").load(link);
+  $("#mainArticle").attr('src', link);
   currentID = parseInt($(this).attr('id'));
   currentFeed = $(this).closest('div').attr("id");
 });
@@ -15,7 +15,7 @@ $('#nextArticle').on('click', function(e) {
   if(currentID != null) {
     currentID += 1;
     newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
-    $("#mainArticle").load(newLink);
+    $("#mainArticle").attr('src', newLink);
   } else {
     alert("Please select your first article");
   }
@@ -27,7 +27,7 @@ $('#previousArticle').on('click', function(e) {
   if(currentID > 1) {
     currentID -= 1;
     newLink = $("#" + `${currentFeed}` + " #" + `${currentID}`).find('a').attr("href");
-    $("#mainArticle").load(newLink);
+    $("#mainArticle").attr('src', newLink);
   } else {
     alert("No previous article found");
   }

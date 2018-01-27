@@ -2,6 +2,7 @@
 include('init.inc.php');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
+
 ?>
 
 <html>
@@ -10,8 +11,8 @@ header('Access-Control-Allow-Headers: *');
   </head>
   <body>
     <div id="wrapper">
-      <div id="mainArticle">
-        Main Article
+      <div id="mainArticleWrapper">
+        <iframe id="mainArticle"></iframe>
       </div>
       <div id="feedDivs">
         <h2>Feeds</h2>
