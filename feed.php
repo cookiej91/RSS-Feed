@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
-function getNews($feed_url, $uniqueId) {
+function getNews($feed_url) {
   $data = file_get_contents($feed_url);
   $x = new SimpleXmlElement($data);
   $tmp = 0;
